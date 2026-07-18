@@ -29,8 +29,8 @@ class InvoiceProcessor:
                     filename=filename,
                     data=attachment.data
                 )
-        finally:
-            self.email_service.disconnect()
+        except Exception as e:
+            logger.error(e)
 
 
 
