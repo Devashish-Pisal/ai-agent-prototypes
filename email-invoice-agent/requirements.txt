@@ -1,0 +1,8 @@
+loguru
+google-genai
+python-dotenv
+pydantic
+pymupdf
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
