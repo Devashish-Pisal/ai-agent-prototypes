@@ -18,6 +18,8 @@ class InvoiceProcessor:
                 logger.info("No PDF attachments found")
                 return
             for attachment in attachments:
+                logger.info("="*100)
+                logger.info("Processing attachment {}", attachment.filename)
                 result = self.model_service.classify_invoice(attachment.data)
                 if not result.is_invoice:
                     logger.info("{} is not an invoice", attachment.filename)
@@ -29,6 +31,7 @@ class InvoiceProcessor:
                     filename=filename,
                     data=attachment.data
                 )
+            logger.info("=" * 100)
         except Exception as e:
             logger.error(e)
 
