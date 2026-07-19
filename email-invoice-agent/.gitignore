@@ -6,3 +6,5 @@
 # ingore secretes
 credentials.json
 token.json
+
+storage/
