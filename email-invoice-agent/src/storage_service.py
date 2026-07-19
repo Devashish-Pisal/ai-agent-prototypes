@@ -17,5 +17,5 @@ class StorageService:
         file_path = self.storage_path / filename
         with open(file_path, "wb") as file:
             file.write(data)
-        logger.info("Saved invoice to {}", file_path)
+        logger.info("Saved invoice to '{}'", file_path.relative_to(Path(__file__).parent.parent))
         return file_path
