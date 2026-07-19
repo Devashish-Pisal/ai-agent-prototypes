@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import time
 import fitz
+from pprint import pprint
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -17,9 +18,10 @@ class ModelService:
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         self.prompt = Path("E:\\(_Coding_Data_)\\(_Github_Repositories_)\\ai-agent-prototypes\\email-invoice-agent\\prompts\\invoice_classifier.txt").read_text(encoding="utf-8")
         self.models = [
+            "gemini-3-flash-preview",
             "gemini-2.5-flash",
-            "gemini-2.5-flash-lite",
-            "gemini-2.0-flash"
+            "gemini-3.1-flash-lite-preview",
+            "gemini-2.5-flash-lite"
         ]
         self.max_retries = 3
 
@@ -54,6 +56,7 @@ class ModelService:
                         result.is_invoice,
                         result.vendor
                     )
+                    logger.info("Model output: {}", str(result))
                     return result
                 except Exception as e:
                     logger.warning(
