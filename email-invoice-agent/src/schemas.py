@@ -8,3 +8,6 @@ class InvoiceResult(BaseModel):
     invoice_date: str | None = None
     total_amount: float | None = None
     currency: str | None = None
+
+    def __str__(self) -> str:
+        return str(self.model_dump())
