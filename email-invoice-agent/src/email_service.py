@@ -1,6 +1,7 @@
 import os
 import base64
 from dataclasses import dataclass
+from config import *
 from pathlib import Path
 from typing import List
 from dotenv import load_dotenv
@@ -33,9 +34,9 @@ class EmailService:
 
     def connect(self):
         credentials = None
-        if Path("token.json").exists():
+        if TOKEN_FILE.exists():
             credentials = Credentials.from_authorized_user_file(
-                "token.json",
+                TOKEN_FILE,
                 SCOPES
             )
         if not credentials or not credentials.valid:
@@ -43,13 +44,13 @@ class EmailService:
                 credentials.refresh(Request())
             else:
                 flow = InstalledAppFlow.from_client_secrets_file(
-                    "credentials.json",
+                    CREDENTIALS_FILE,
                     SCOPES
                 )
                 credentials = flow.run_local_server(
                     port=0
                 )
-            Path("token.json").write_text(
+            TOKEN_FILE.write_text(
                 credentials.to_json(),
                 encoding="utf-8"
             )

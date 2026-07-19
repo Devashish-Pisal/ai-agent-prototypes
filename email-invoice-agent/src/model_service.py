@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import time
 import fitz
+from config import *
 from pprint import pprint
 from dotenv import load_dotenv
 from google import genai
@@ -16,7 +17,7 @@ load_dotenv()
 class ModelService:
     def __init__(self):
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-        self.prompt = Path("E:\\(_Coding_Data_)\\(_Github_Repositories_)\\ai-agent-prototypes\\email-invoice-agent\\prompts\\invoice_classifier.txt").read_text(encoding="utf-8")
+        self.prompt = INVOICE_CLASSIFICATION_PROMPT_FILE.read_text(encoding="utf-8")
         self.models = [
             "gemini-3-flash-preview",
             "gemini-2.5-flash",
