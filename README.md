@@ -2,20 +2,25 @@
 
 A collection of AI agents and workflow automation prototypes built while exploring practical applications of LLMs, APIs, and process automation.
 
+---
+
 ## Projects
 
-| Project             | Description                                                                                                                               |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| Email Invoice Agent | Scans an email inbox, detects invoice emails, downloads PDF attachments, verifies them with an LLM, and stores them in organized folders. |
+| Project             | Description                                                                                                                      |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Email Invoice Agent | Scans an email inbox, detects invoice emails, downloads PDF attachments, verifies them with an LLM, and stores them in a folder. |
+
+---
 
 ## Tech Stack
 
 - Python
-- Ollama
-- IMAP
-- PyMuPDF
-- Tesseract OCR
-- GitHub Actions (optional)
+- OAuth
+- Gmail API
+- Gemini API 
+- etc.
+
+---
 
 ## Goals
 
@@ -23,6 +28,8 @@ A collection of AI agents and workflow automation prototypes built while explori
 - Learn Workflow Automation
 - Build reusable automation components
 - Explore LLM integrations
+
+---
 
 ## Repository Structure
 
@@ -35,8 +42,9 @@ ai-agent-prototypes/
 ├─ README.md
 ````
 
+---
 
-## Future Ideas
+## Future Prototype Ideas
 
 - Resume Screening Agent
 - Customer Support Agent
@@ -46,3 +54,5 @@ ai-agent-prototypes/
 - CRM Automation
 - Slack AI Assistant
 - PDF Knowledge Agent
+
+---
