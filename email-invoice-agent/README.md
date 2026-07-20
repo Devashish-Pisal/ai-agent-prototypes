@@ -52,7 +52,11 @@ Follow these steps to run the project.
 pip install -r requirements.txt
 ```
 
-### 6. Run the `main.py`
+### 6. Setup Gemini API key
+- Create `.env` file in project root 
+- Add all the secrets mentioned in `.env.example` to `.env` file 
+
+### 7. Run the `main.py`
 
 On the first run:
 
@@ -84,6 +88,7 @@ project/
 ---
 
 ## Extension Ideas
+- Support for .PNG and .JPEG file formates 
 - Save extracted data to database (MySQL, SQLite, etc.)
 - Use system/user prompt & model input parameters (e.g. temp, top_p, max_tokens, etc.) to control model output better
 - Send pdf as attachment with prompt to model, so model can utilize its multi-modal capabilities and make more precise prediction 
