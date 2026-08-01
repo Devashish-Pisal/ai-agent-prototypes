@@ -2,3 +2,6 @@ matplotlib
 pandas
 loguru
 numpy
+scikit-learn
+openpyxl
+xgboost
